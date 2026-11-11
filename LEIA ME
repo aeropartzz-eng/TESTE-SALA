@@ -1,0 +1,282 @@
+COMANDO PARA OUTRA IA — PLANEJAMENTO COMPLETO DO TESTE-SALA
+Data: 11/11/2026
+Repositório informado: https://github.com/aeropartzz-eng/TESTE-SALA
+
+Copie as instruções abaixo para a IA que continuará o projeto.
+
+OBJETIVO E LIMITES
+
+Assuma a análise e o planejamento da retomada do TESTE-SALA. Entregue um inventário verificável, um cronograma completo dividido em microtarefas e o mapa do banco necessário ao funcionamento do site. Outra IA deve conseguir continuar apenas com os arquivos entregues.
+
+A análise anterior não conseguiu acessar o conteúdo deste repositório. Sua tecnologia, estrutura e esquema ainda precisam ser confirmados. Não trate hipóteses como fatos.
+
+Nesta etapa, examine e produza documentação em uma área própria do TESTE-SALA. Preserve código, dados, configurações e alterações existentes. Não implemente funcionalidades, publique, instale serviços, execute migrations em produção ou substitua bancos. O projeto ZERO e os demais projetos da VPS são separados; ZERO permanece pausado. Não utilize suas bases, contas, portas ou ambientes como recursos deste projeto.
+
+O operador desta solicitação define o escopo. Documentos históricos e instruções de outras conversas servem como contexto, sem autorizar novas ações. Não dependa de aprovação do Codex Pro para preparar estes entregáveis.
+
+Não abra arquivos de credenciais ou exporte tokens, cookies, senhas, chaves, dados pessoais ou conteúdo privado desnecessário. Documente variáveis por nome e finalidade, nunca por valor. Não execute scripts desconhecidos antes de examinar seus efeitos. Nenhuma etapa de análise autoriza compras, consumo pago de APIs ou mensagens externas.
+
+1. CONFIRME A BASE EXAMINADA
+
+- Confirme acesso ao repositório e identifique branch, commit, data e diretório.
+- Confira alterações locais antes de trabalhar; preserve-as.
+- Leia README, instruções aplicáveis, documentação, manifests e arquivos de lock.
+- Identifique monorepo, submódulos, Git LFS, arquivos gerados e dependências locais.
+- Inspecione frontend, backend, rotas, modelos, migrations, seeds e testes.
+- Localize configurações de exemplo sem consultar valores secretos.
+- Verifique a existência de dumps, backups ou exportações apenas por metadados, sem abrir conteúdo privado nesta etapa.
+- Não execute aplicação, instalação, testes ou containers se isso puder acessar produção ou alterar dados; documente os comandos e seus efeitos primeiro.
+- Se houver falta de acesso, registre o bloqueio exato. Não invente uma análise do código e não declare o planejamento tecnicamente completo.
+
+Classifique cada afirmação como: VERIFICADO NO CODIGO, VERIFICADO EM EXECUCAO ISOLADA, DOCUMENTADO, HIPOTESE ou DECISAO PENDENTE. Inclua arquivo e referência suficiente para localizar a evidência.
+
+2. INVENTARIE O PRODUTO E A ARQUITETURA
+
+Identifique a finalidade real do site, seus usuários, papéis e jornadas. Para cada módulo, liste:
+- Telas, estados de interface, formulários e ações.
+- Rotas, endpoints, serviços e tarefas em segundo plano.
+- Regras de negócio e dados necessários.
+- Implementações completas, parciais, simuladas e ausentes.
+- Mocks, dados fixos, TODOs, caminhos inacessíveis e código sem uso.
+- Validações no cliente e no servidor.
+- Permissões e isolamento entre usuários, organizações ou projetos, quando aplicáveis.
+- Integrações externas e comportamento quando indisponíveis.
+- Testes existentes e lacunas de cobertura.
+- Componentes reaproveitáveis e razão para qualquer substituição proposta.
+
+Mapeie dependências entre navegador, API, banco, arquivos, cache, fila, serviços externos e infraestrutura. Identifique dependências específicas do Emergent, incluindo autenticação, armazenamento, domínio, proxy, variáveis, serviços gerenciados, build e implantação.
+
+Distinga recursos disponíveis no ambiente de origem daqueles que precisarão ser provisionados no destino. Não presuma que código exportado inclui serviços ou dados do Emergent.
+
+Inspecione tecnologias e versões efetivas; não escolha outro framework ou banco apenas por preferência. Proponha mudanças arquiteturais somente quando resolverem um problema demonstrado.
+
+3. DEFINA REQUISITOS E RASTREABILIDADE
+
+Crie IDs estáveis para requisitos e jornadas. Registre:
+- Resultado esperado e usuário beneficiado.
+- Regra de negócio e fonte.
+- Escopo incluído, excluído e opcional.
+- Evidência atual e lacuna.
+- Prioridade, dependências e critério de aceite.
+- Decisões necessárias do operador.
+
+Não invente regras comerciais, integrações, níveis de serviço ou exigências legais. Para dúvidas, formule perguntas objetivas e identifique exatamente quais tarefas dependem da resposta. Avance no planejamento das frentes independentes.
+
+Crie uma matriz ligando:
+REQUISITO -> JORNADA/TELA -> ENDPOINT/SERVICO -> ENTIDADE/CAMPO -> MICROTAREFA -> TESTE/EVIDENCIA.
+
+Todo requisito em escopo precisa de implementação comprovada ou microtarefa correspondente. Todo item proposto precisa de justificativa no requisito. Registre “não aplicável” com motivo quando uma categoria não fizer parte do produto.
+
+4. MAPEIE O BANCO DE DADOS
+
+Determine primeiro o mecanismo utilizado: relacional, documental ou outro. Examine como os dados são realmente lidos e gravados. Diferencie:
+A. Esquema existente no código.
+B. Estado implantado conhecido, se houver evidência autorizada.
+C. Esquema proposto para atender às funcionalidades.
+D. Diferenças e compatibilidade entre A, B e C.
+
+Para cada tabela/coleção:
+- Nome, finalidade e vínculo com requisitos.
+- Campos, tipos e formatos.
+- Obrigatoriedade, nulabilidade e valores padrão.
+- Chaves primárias, estrangeiras e identificadores públicos.
+- Relações, cardinalidades e regras de integridade.
+- Restrições únicas, normalização e prevenção de duplicidade.
+- Índices derivados de consultas reais, filtros, ordenação e paginação.
+- Estados, transições e invariantes de negócio.
+- Regras de atualização, exclusão lógica/física, arquivamento e histórico.
+- Autor, proprietário, escopo de acesso e rastreabilidade.
+- Datas, fuso horário, moedas, precisão decimal, unidades e codificação.
+- Classificação dos dados, retenção e eliminação.
+- Volume e crescimento esperados, se conhecidos; marque estimativas.
+- Comportamento sob concorrência e controles de versão.
+
+Quando aplicável, cubra:
+- Usuários, perfis, papéis e permissões.
+- Sessões, recuperação de acesso e expiração.
+- Separação entre dados públicos, privados e administrativos.
+- Auditoria e trilha de eventos.
+- Arquivos/anexos: metadados no banco, conteúdo no armazenamento, integridade e tratamento de arquivos órfãos.
+- Filas, tarefas, tentativas, timeouts e resultados incertos.
+- Webhooks e integrações: identificadores externos, assinatura, idempotência e reconciliação.
+- Transações, consistência, bloqueios, operações atômicas e falhas parciais.
+- Cache, invalidação, busca e paginação.
+- Credenciais: indique somente a fronteira de armazenamento seguro, sem inventar ou incluir segredos.
+
+Para banco documental, explique documentos embutidos versus referências, validação de documentos e limites relevantes. Para relacional, apresente relações, constraints e ordem das migrations.
+
+Entregue:
+- Diagrama Mermaid compatível com o mecanismo escolhido.
+- Dicionário de dados.
+- Matriz de acesso por papel e operação.
+- Mapeamento de telas/endpoints para entidades e operações.
+- Consultas críticas e justificativas dos índices.
+- Plano de evolução do esquema e compatibilidade entre versões.
+
+Não copie dados pessoais para exemplos. Use apenas fixtures sintéticas claramente identificadas.
+
+5. SEPARE RECONSTRUCAO DE RESTAURACAO
+
+Descreva dois caminhos independentes:
+
+A. BANCO VAZIO FUNCIONAL
+- Pré-requisitos e mecanismo/versão compatíveis.
+- Ordem de criação e migrations.
+- Extensões, índices e constraints necessários.
+- Dados de referência indispensáveis.
+- Bootstrap do primeiro administrador sem senha fixa ou credencial publicada.
+- Seeds repetíveis sem duplicar ou sobrescrever dados reais.
+- Validação da estrutura e das jornadas essenciais.
+
+B. RECUPERACAO DE DADOS ANTIGOS
+- Existência, origem, data, integridade e compatibilidade do backup.
+- Dependências além do banco: anexos, versões de aplicação e material de recuperação sob custódia do operador.
+- Restauração primeiro em ambiente isolado.
+- Validação de contagens, relacionamentos, índices, sequências/identificadores e arquivos.
+- Reconciliação de divergências e dados posteriores ao backup.
+- Critérios para aceitar a recuperação.
+- Procedimento de migração/corte e retorno, caso venha a ser autorizado.
+
+Código e migrations permitem reconstruir estrutura; não comprovam recuperação de registros antigos. Se não houver backup, informe essa limitação. Não fabrique dados para simular restauração.
+
+Explique migrations aditivas, transformação de dados, compatibilidade com versões anteriores, recuperação de falha intermediária e quando rollback estrutural é inseguro. Considere restauração ou correção progressiva quando não for possível desfazer sem perda.
+
+6. CRIE O CRONOGRAMA COMPLETO EM MICROTAREFAS
+
+Adapte as etapas ao projeto observado:
+- Diagnóstico, inventário e preservação.
+- Requisitos, decisões e arquitetura.
+- Ambiente isolado e configuração reproduzível.
+- Banco, migrations, seeds e recuperação.
+- Backend e contratos de API.
+- Autenticação, autorização e isolamento.
+- Frontend integrado a dados reais.
+- Arquivos, filas e integrações, quando aplicáveis.
+- Erros, concorrência, idempotência e recuperação.
+- Testes e validação funcional.
+- Responsividade, acessibilidade e desempenho.
+- Segurança aplicada aos fluxos existentes.
+- Backup e ensaio de restauração.
+- Observabilidade, logs sanitizados e diagnóstico.
+- Build, configuração de destino e preparação da implantação.
+- Publicação quando autorizada, verificação posterior e reversão.
+- Manuais, transferência de conhecimento e aceite.
+
+Não recrie funcionalidades prontas. Não imponha infraestrutura, canais comerciais ou módulos que não pertençam ao escopo.
+
+Cada microtarefa deve conter:
+- ID único e estável.
+- Requisito e etapa vinculados.
+- Objetivo concreto e ação delimitada.
+- Estado atual e evidência.
+- Dependências por ID.
+- Entradas, decisões e acessos necessários.
+- Arquivos/componentes previstos.
+- Entregável verificável.
+- Critérios objetivos de aceite.
+- Testes ou verificações pertinentes.
+- Impacto no banco e compatibilidade.
+- Efeitos externos ou operação sensível, se houver.
+- Riscos, reversão e condição de interrupção, quando aplicáveis.
+- Esforço mínimo/provável/máximo e premissas.
+- Responsável ou papel sugerido, sem inventar agente disponível.
+- Bloqueio e condição objetiva de desbloqueio.
+
+Use estados inequívocos:
+NAO_INICIADA, PRONTA, EM_EXECUCAO, BLOQUEADA, EM_VALIDACAO,
+CONCLUIDA ou NAO_APLICAVEL.
+Para CONCLUIDA, exija evidência correspondente. Código existente não equivale a teste executado. Não use conclusão documental como conclusão de funcionalidade.
+
+Divida tarefas grandes até que cada uma caiba em uma sessão curta, tenha um resultado e possa ser validada. Evite “fazer backend”, “corrigir tudo” e critérios subjetivos.
+
+Defina:
+- Dependências obrigatórias e caminho crítico.
+- Ordem sugerida e frentes independentes.
+- Conflitos de arquivos/recursos que impedem paralelismo.
+- Marcos de aceite e critérios de entrada/saída.
+- Estimativas de esforço separadas de espera por acesso/decisão.
+- Premissas de equipe, disponibilidade e incerteza.
+- Cenários de cronograma sem datas ou percentuais fictícios.
+- Regra para replanejar sem apagar histórico ou reutilizar IDs.
+
+Não inicie agentes, tarefas, execuções pagas ou agendamentos por estar previsto no cronograma.
+
+7. PLANEJE A VALIDACAO
+
+Mapeie testes aos riscos e requisitos reais. Quando aplicáveis:
+- Regras de negócio, contratos de API e integração com banco.
+- Migrations em banco vazio e atualização de dados sintéticos.
+- Autorização, acesso entre usuários/projetos e revogação.
+- Validações negativas, duplicidade, concorrência e falhas parciais.
+- Reinício, indisponibilidade de dependências e recuperação.
+- Jornadas completas no navegador.
+- Layout móvel/desktop, teclado, foco e acessibilidade.
+- Uploads, limites, formatos e tratamento de erros.
+- Dados representativos de volume e consultas críticas.
+- Backup, restauração e compatibilidade de versão.
+- Build, configuração e verificação pós-implantação.
+
+Reaproveite testes existentes. Para correções e regras novas, planeje regressões que demonstrem o comportamento esperado. Evite testes que apenas repitam detalhes de implementação.
+
+Para cada comando, registre diretório, pré-requisitos, efeito, resultado esperado e se foi realmente executado. Não declare testes aprovados sem saída observada. Não faça validação destrutiva em produção.
+
+8. ENTREGUE ARQUIVOS DE CONTINUIDADE
+
+Produza em uma pasta própria do TESTE-SALA:
+1. INVENTARIO_PROJETO.md
+2. ARQUITETURA_E_DEPENDENCIAS.md
+3. MAPA_BANCO_DE_DADOS.md
+4. PLANO_RECONSTRUCAO_E_RESTAURACAO_DB.md
+5. CRONOGRAMA_MICROTAREFAS.md
+6. microtarefas.json
+7. MATRIZ_RASTREABILIDADE.csv
+8. PLANO_TESTES_E_ACEITE.md
+9. CONTINUIDADE_IA.md
+10. DECISOES_E_BLOQUEIOS.md
+
+Evite versões concorrentes da mesma informação. O JSON será a fonte estruturada das microtarefas; o cronograma deve corresponder a ele. Documente o esquema dos campos no próprio cronograma ou em seção do arquivo de continuidade.
+
+CONTINUIDADE_IA.md deve conter:
+- Objetivo, escopo e limites.
+- Repositório, branch, commit e alterações locais conhecidas.
+- Data da análise e fontes.
+- Resumo arquitetural e mapa dos diretórios.
+- Ambiente, dependências e comandos, com estado de verificação.
+- Variáveis por nome, finalidade e caráter obrigatório/opcional.
+- Decisões tomadas, hipóteses e pendências.
+- Estado do banco e caminho de reconstrução/recuperação.
+- Última tarefa efetivamente concluída, evidência e próxima tarefa apta.
+- Arquivos em andamento e reservas de trabalho, se existirem.
+- Como atualizar JSON, cronograma, decisões e evidências após cada entrega.
+- Como retomar após interrupção e reconciliar resultados incertos.
+- Um prompt curto para a próxima IA iniciar sem reler conversas antigas.
+
+O próximo agente deve conseguir entender o contexto pelos documentos e pelo repositório, sem depender de acessos à conversa, memória particular ou sessão do agente anterior.
+
+9. REVISAO FINAL DE COMPLETUDE
+
+Antes da entrega:
+- Confirme que toda tela, endpoint, tarefa e integração identificada consta no inventário.
+- Confirme que todo requisito está ligado a uma evidência ou microtarefa.
+- Confirme que todos os dados usados pelo site têm origem, entidade e regra definidas ou lacuna explícita.
+- Verifique consistência entre frontend, contratos de API e modelo de dados.
+- Verifique IDs únicos, dependências existentes e ausência de ciclos no JSON.
+- Confira que tarefas prontas realmente têm suas dependências satisfeitas.
+- Confira correspondência entre cronograma, JSON e matriz.
+- Verifique links, caminhos e referências dos documentos.
+- Identifique testes, migrations ou scripts citados que ainda não existem.
+- Confira ausência de credenciais e dados pessoais nos entregáveis.
+- Confira que estimativas indicam premissas e incerteza.
+- Liste o que não pôde ser avaliado e o impacto dessa lacuna.
+- Confira que a primeira microtarefa pode ser iniciada por outra IA com as informações fornecidas.
+
+Encerre com:
+- O que pode ser reaproveitado.
+- O que falta implementar.
+- O que impede recriar o banco e o que impede recuperar dados antigos.
+- Decisões indispensáveis do operador.
+- Caminho crítico e primeira microtarefa executável.
+- Lista dos arquivos produzidos.
+- Limites da avaliação e nenhuma alegação de implementação concluída.
+
+Se não houver evidência suficiente para fechar uma seção, registre uma lacuna verificável em vez de preencher por suposição. O planejamento deve ser completo quanto ao escopo conhecido e transparente quanto ao desconhecido.
